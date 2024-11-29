@@ -1,10 +1,9 @@
-// frontend/next.config.ts
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   reactStrictMode: true,
   eslint: {
-    ignoreDuringBuilds = true,
+    ignoreDuringBuilds: true, // Fixed the syntax issue with `=`
   },
   typescript: {
     // Ensures the TypeScript build is included in the Vercel deployment
@@ -24,4 +23,5 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
+
