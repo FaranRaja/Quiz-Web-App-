@@ -1,0 +1,52 @@
+### Signup
+POST http://localhost:5000/api/auth/signup
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "Password123!",
+  "phoneNumber": "1234567890"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "Password123!"
+}
+
+### Get All Quizzes
+GET http://localhost:5000/api/quizzes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0NGMyZTI3NjM3YjhiMjRjZDcxZWQwIn0sImlhdCI6MTczMjYzMjg1MywiZXhwIjoxNzMyNjM2NDUzfQ.q8Uea1XydKTWaQlkw4mEFpDqaCjM98-kNtgRxikEFyQ
+
+### Get Quiz By ID
+GET http://localhost:5000/api/quizzes/6744cf69a769d898dd017f17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0NGMyZTI3NjM3YjhiMjRjZDcxZWQwIn0sImlhdCI6MTczMjYzMjg1MywiZXhwIjoxNzMyNjM2NDUzfQ.q8Uea1XydKTWaQlkw4mEFpDqaCjM98-kNtgRxikEFyQ
+
+### Submit Quiz Answers
+POST http://localhost:5000/api/quizzes/{{quiz_id}}/submit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0NGMyZTI3NjM3YjhiMjRjZDcxZWQwIn0sImlhdCI6MTczMjYzMjg1MywiZXhwIjoxNzMyNjM2NDUzfQ.q8Uea1XydKTWaQlkw4mEFpDqaCjM98-kNtgRxikEFyQ
+
+{
+  "answers": ["answer1_id", "answer2_id", "answer3_id"]
+}
+
+### Get User Profile
+GET http://localhost:5000/api/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0NGMyZTI3NjM3YjhiMjRjZDcxZWQwIn0sImlhdCI6MTczMjYzMjg1MywiZXhwIjoxNzMyNjM2NDUzfQ.q8Uea1XydKTWaQlkw4mEFpDqaCjM98-kNtgRxikEFyQ
+
+### Update User Profile
+PUT http://localhost:5000/api/users/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0NGMyZTI3NjM3YjhiMjRjZDcxZWQwIn0sImlhdCI6MTczMjYzMjg1MywiZXhwIjoxNzMyNjM2NDUzfQ.q8Uea1XydKTWaQlkw4mEFpDqaCjM98-kNtgRxikEFyQ
+
+{
+  "name": "John Updated",
+  "dateOfBirth": "1990-01-01",
+  "gender": "Male",
+  "phoneNumber": "0987654321"
+}

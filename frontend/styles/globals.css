@@ -1,0 +1,25 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --background: #f9f9f9;
+  --foreground: #1a202c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #f9f9f9;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer base {
+  input,
+  select {
+    @apply text-sm;
+  }
+}
