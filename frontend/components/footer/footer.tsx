@@ -1,6 +1,7 @@
 // frontend/components/footer/footer.tsx
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import React from 'react';
 
 export function Footer() {
   const links = [
@@ -12,38 +13,39 @@ export function Footer() {
     { href: "/blogs", label: "BLOGS" },
   ];
 
-  const footerStyle = {
+  // Define the style objects with the type React.CSSProperties
+  const footerStyle: React.CSSProperties = {
     borderTop: "1px solid #dee2e6",
     backgroundColor: "#f8f9fa",
     padding: "1rem 0",
   };
 
-  const containerStyle = {
+  const containerStyle: React.CSSProperties = {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "column", // Now correctly typed as React.CSSProperties
     flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
   };
 
-  const navStyle = {
+  const navStyle: React.CSSProperties = {
     display: "flex",
     flexWrap: "wrap",
     gap: "1rem",
     marginBottom: "1rem",
   };
 
-  const linkStyle = {
+  const linkStyle: React.CSSProperties = {
     color: "#6c757d",
     textDecoration: "none",
   };
 
-  const socialLinkStyle = {
+  const socialLinkStyle: React.CSSProperties = {
     color: "#6c757d",
     marginRight: "1rem",
   };
 
-  const textStyle = {
+  const textStyle: React.CSSProperties = {
     color: "#6c757d",
   };
 
